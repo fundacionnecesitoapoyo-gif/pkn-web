@@ -1,0 +1,11 @@
+{
+ "version": "1.7",
+ "paypal": {
+  "donar": "https://www.paypal.com/ncp/payment/PLB-4RNG2ZSLF8RQ",
+  "slots": "https://www.paypal.com/ncp/payment/PLB-GY99F835DQ5T"
+ },
+ "anuncio": {
+  "id": "",
+  "texto": ""
+ }
+}

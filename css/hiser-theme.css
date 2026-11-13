@@ -1,0 +1,112 @@
+/* PokeWeb by Hiser — skin visual (no cambia la lógica del juego) */
+:root{--bg:#080d19;--bg2:#101a2e;--bg3:#14223b;--border:#263957;--accent:#b7ff58;--accent2:#ff63b7;--text:#f3f7ff;--text-dim:#9aabc8;--green:#b7ff58;--gold:#facc15}
+html,body{background:radial-gradient(ellipse at 75% -10%,#233c69 0,transparent 42%),#080d19!important;color:var(--text)}
+#title-screen{background:transparent!important}
+#title-screen .gba-title-col{gap:14px}
+#title-screen .game-logo{font-family:'Press Start 2P',monospace;font-size:clamp(26px,9vw,46px)!important;color:#b7ff58!important;text-shadow:0 3px 0 #14532d,0 0 24px #b7ff5866!important;letter-spacing:1px}
+#title-screen .game-subtitle{color:#ff63b7!important;font-weight:800;letter-spacing:2px;text-shadow:none!important}
+#title-screen .gba-panel{background:#101a2eec!important;border:1px solid #2a3c5a!important;border-radius:20px!important;box-shadow:0 14px 40px #0006!important}
+#title-screen .gba-menu-item{border-radius:14px!important;color:#f3f7ff!important;background:linear-gradient(145deg,#1c3157,#14223b)!important;border:1px solid #3a5a8f!important;min-height:52px;font-weight:800}
+#title-screen #btn-new-run{background:linear-gradient(145deg,#b7ff58,#42b7ff)!important;color:#07111c!important;border:0!important}
+#title-screen #btn-endless-run{color:#facc15!important}
+#title-screen .gba-chip{border-radius:12px!important;background:#14223b!important;color:#f3f7ff!important;border:1px solid #263957!important}
+#title-screen .gba-save-slot{border-radius:14px!important}
+#title-screen .gba-credits,#title-screen .gba-credits a{color:#9aabc8!important}
+#title-screen .title-tagline{margin:4px 0 0;font:700 12px/1.3 system-ui;color:#b7ff58;letter-spacing:.3px;text-align:center;opacity:.95}
+#title-screen .community-banner{
+  display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,#5865F2,#4752c4);border:1px solid #7b86f5;
+  border-radius:16px;padding:12px 14px;box-shadow:0 8px 28px #5865f255;
+  transition:transform .12s,box-shadow .12s
+}
+#title-screen .community-banner:hover{transform:translateY(-1px);box-shadow:0 12px 32px #5865f266}
+#title-screen .community-banner-icon{font-size:28px;line-height:1}
+#title-screen .community-banner-text{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+#title-screen .community-banner-text strong{font:800 14px system-ui}
+#title-screen .community-banner-text small{font:12px/1.35 system-ui;opacity:.9}
+#title-screen .community-banner-arrow{font:800 18px system-ui;opacity:.85}
+#title-screen .compete-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#title-screen .compete-btn{
+  border:1px solid #3a5a8f;border-radius:14px;min-height:48px;padding:10px 8px;
+  font:800 12px/1.2 system-ui;color:#f3f7ff;background:linear-gradient(145deg,#1c3157,#14223b);
+  cursor:pointer;touch-action:manipulation
+}
+#title-screen .compete-btn--rank{background:linear-gradient(145deg,#facc15,#f59e0b)!important;color:#1a1200!important;border:0!important}
+#title-screen .compete-btn--share{border-color:#42b7ff;color:#9fdfff}
+#title-screen .compete-btn--hof{border-color:#c8a0ff;color:#e2c8ff}
+#title-screen .compete-hint{margin:0;text-align:center;font:12px/1.4 system-ui;color:#9aabc8}
+#title-screen .gba-chip--discord{display:flex;align-items:center;justify-content:center;text-decoration:none;background:#5865F2!important;border-color:#7b86f5!important;color:#fff!important;font-weight:800}
+#title-screen .gen-toggle-label{color:#b7ff58!important;font-weight:700}
+.hz-mascot{width:min(62vw,300px);height:auto;margin:-6px auto -26px;filter:drop-shadow(0 10px 26px #4ade8055);animation:hzf 4s ease-in-out infinite;pointer-events:none;position:relative;z-index:1}
+@keyframes hzf{50%{transform:translateY(-8px) rotate(-1.5deg)}}
+.hz-lang{align-self:flex-end;background:#111d31;color:#fff;border:1px solid #263957;border-radius:12px;padding:8px 10px;font:700 13px system-ui}
+
+button{transition:transform .08s}button:active{transform:scale(.97)}
+
+#gen-unlock-progress{font:13px/1.5 system-ui;color:var(--text-dim);text-align:center}
+#battle-screen .battle-field{background:radial-gradient(ellipse at 65% 30%,#426a7933,transparent 65%),linear-gradient(#14223b44,#1d493044)}
+.item-equip-box{max-height:85dvh;overflow:auto;max-width:calc(100vw - 24px)}
+.item-equip-box>button{display:block;width:100%;margin-top:8px}
+@media(max-width:600px),(max-height:640px){
+ html,body{max-width:100%;overflow-x:hidden}
+ button,select,.gba-chip,.equip-pokemon-row{min-height:44px;touch-action:manipulation}
+ .screen{max-width:100%;box-sizing:border-box}
+ #title-screen{height:auto;min-height:100dvh;overflow-y:auto;padding-bottom:80px}
+ #title-screen .hz-mascot{width:140px;margin:0 auto -16px}
+ #title-screen .gba-title-col{gap:8px;min-width:0}
+ #title-screen .gba-layout{max-width:100%;min-width:0}
+ #hb{position:absolute!important;top:4px!important;left:4px!important;font-size:11px!important}
+ #hb img{width:32px!important;height:32px!important}
+ #battle-screen{height:100dvh;max-height:100dvh;padding:8px;overflow-y:auto}
+ #battle-screen .battle-field{min-height:180px;gap:4px}
+ #battle-screen .battle-side{min-width:0;padding:2px}
+ .battle-command{margin-top:4px;padding:6px;gap:6px}
+ .battle-move-buttons{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ .move-btn{padding:8px;min-width:0;min-height:52px}
+ .move-name{font-size:9px;line-height:1.5;overflow-wrap:anywhere}
+ .battle-command-actions{gap:4px;flex-wrap:wrap}
+ .battle-command-actions button{flex:1;padding:7px!important;font-size:10px!important;min-width:0}
+ .battle-party-box,.modal-content{max-width:calc(100vw - 20px);max-height:85dvh;overflow-y:auto;box-sizing:border-box}
+ .xbtn button{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Comfortable mobile-first overlays and reward hub */
+:root{--hz-surface:#17243a;--hz-surface-2:#20324d;--hz-line:#38506f;--hz-ink:#edf4ff;--hz-muted:#b7c5d9;--hz-lime:#c6f36a;--hz-cyan:#79d9f2}
+#hiser-wallet{position:fixed;right:12px;top:calc(12px + env(safe-area-inset-top));z-index:250;background:#17243aee;color:var(--hz-ink);border:1px solid var(--hz-line);border-radius:999px;padding:10px 15px;font:800 13px system-ui;box-shadow:0 8px 24px #0005;backdrop-filter:blur(12px);min-height:42px}
+.hiser-overlay{position:fixed;inset:0;z-index:10000;background:#07101dcc;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:14px;color:var(--hz-ink);font-family:system-ui,sans-serif}
+.hiser-hub-card{width:min(720px,100%);max-height:min(90dvh,900px);overflow:auto;background:linear-gradient(155deg,#1a2b45,#101a2c);border:1px solid #52698a;border-radius:24px;box-shadow:0 24px 80px #0009;padding:clamp(15px,4vw,26px)}
+.hiser-hub-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.hiser-hub-head h2{font-size:clamp(20px,5vw,27px);margin:5px 0;color:#f4f8ff}.hiser-hub-head p{margin:0;color:var(--hz-muted)}.hiser-eyebrow{font-size:10px;letter-spacing:2px;font-weight:900;color:var(--hz-lime)}.hiser-close{width:40px;height:40px;border-radius:50%;border:1px solid var(--hz-line);background:var(--hz-surface-2);color:#fff;font-size:24px}
+.hiser-tabs{display:flex;gap:8px;margin:20px 0 14px}.hiser-tabs button,.hiser-action{border:1px solid var(--hz-line);border-radius:13px;background:var(--hz-surface-2);color:var(--hz-ink);padding:12px 14px;font-weight:800;min-height:44px}.hiser-tabs button{flex:1}.hiser-tabs button.active,.hiser-action.primary{background:linear-gradient(120deg,#c6f36a,#79d9f2);color:#102033;border:0}.hiser-note{font-size:14px;line-height:1.6;color:var(--hz-muted);background:#0b1627aa;border:1px solid #344b68;border-radius:14px;padding:12px}.hiser-wheel-wrap{width:220px;height:220px;margin:20px auto;position:relative}.hiser-wheel{width:100%;height:100%;border-radius:50%;border:7px solid #d9e8f7;box-shadow:0 10px 35px #0008,inset 0 0 0 4px #14243a;background:conic-gradient(#79d9f2 0 72deg,#c6f36a 72deg 144deg,#f5c96b 144deg 216deg,#b4a0ff 216deg 288deg,#ff8a9b 288deg 360deg);position:relative;transition:transform 1.8s cubic-bezier(.12,.75,.15,1)}.hiser-wheel span{position:absolute;font-size:12px;font-weight:1000;color:#102033;text-shadow:0 1px #fff8}.hiser-wheel span:nth-child(1){top:17%;left:67%}.hiser-wheel span:nth-child(2){top:66%;left:69%}.hiser-wheel span:nth-child(3){top:76%;left:23%}.hiser-wheel span:nth-child(4){top:27%;left:8%}.hiser-wheel span:nth-child(5){top:4%;left:37%;font-size:9px}.hiser-wheel-pointer{position:absolute;top:-9px;left:calc(50% - 10px);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:24px solid #fff;filter:drop-shadow(0 2px 3px #000)}.hiser-wheel.spinning{transform:rotate(1800deg)}.hiser-wheel-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}.hiser-wheel-actions button{flex:1;min-width:140px}.hiser-action:disabled{opacity:.42;filter:grayscale(.5)}.hiser-status{text-align:center;min-height:24px;color:#d6e7fa;font-size:13px}.hiser-rare-reward{background:#3b285d;border:1px solid #a78bfa;padding:12px;border-radius:12px;text-align:center;color:#f1eaff;font-weight:800}
+.hiser-mega-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px}.hiser-mega-card{background:#0c1728;border:1px solid #344b68;border-radius:15px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;min-width:0}.hiser-mega-card img{width:72px;height:72px;object-fit:contain;image-rendering:pixelated}.hiser-mega-card b{font-size:12px}.hiser-mega-card small{color:var(--hz-muted);font-size:11px}.hiser-mega-card button{width:100%;min-height:40px;border:0;border-radius:10px;background:#c6f36a;color:#102033;font-weight:900}.hiser-mega-card button:disabled{background:#34445a;color:#c4d0df;opacity:1}
+@media(max-width:480px){#hiser-wallet{top:auto;bottom:calc(12px + env(safe-area-inset-bottom));right:12px}.hiser-hub-card{border-radius:18px}.hiser-wheel-wrap{width:190px;height:190px}.hiser-tabs button{font-size:12px;padding:10px 7px}}
+
+/* Barra inferior ordenada (compartir) */
+#hz-gatu{display:none!important}
+.xbtn{left:10px!important;right:10px!important;justify-content:center!important;flex-wrap:nowrap!important;gap:6px!important}
+.xbtn button,.xbtn a{flex:1 1 0;justify-content:center;padding:10px 6px!important;font-size:12px!important;white-space:nowrap;min-height:44px}
+#hiser-wallet{bottom:calc(68px + env(safe-area-inset-bottom))!important}
+#title-screen{padding-bottom:150px!important}
+
+/* Portada limpia: fondo suave + logo nuevo */
+body[data-screen="title-screen"]{background:radial-gradient(ellipse at 50% 0%,#17406b 0%,#0b1d35 55%,#070f1d 100%) fixed!important}
+#title-screen .game-logo,#title-screen .game-subtitle,#title-screen .title-tagline,#title-screen .hz-mascot{display:none!important}
+.hz-logo{display:block;width:min(88vw,400px);height:auto;margin:0 auto 10px;filter:drop-shadow(0 6px 18px #0009);position:relative;z-index:1;pointer-events:none}
+#hiser-wallet{top:calc(46px + env(safe-area-inset-top))!important;bottom:auto!important;left:10px!important;right:auto!important}
+.xbtn button{min-width:0!important;padding:10px 4px!important;font-size:12px!important}
+/* Selector de regiones propio (siempre visible) */
+#hz-regions{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:420px;margin:8px auto 12px;padding:0 14px;box-sizing:border-box}
+#hz-regions button{position:relative;border:0;border-radius:16px;min-height:86px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:inherit;box-shadow:0 4px 14px #0006}
+#hz-regions .i{font-size:24px;line-height:1}#hz-regions b{font-size:18px;letter-spacing:.5px;text-shadow:0 2px 4px #0008}#hz-regions small{font-size:11px;opacity:.9}
+#hz-regions .t{font-style:normal;font-size:11px;font-weight:700;background:#000a;border-radius:10px;padding:2px 8px;margin-top:2px}
+#hz-regions button.lock{filter:grayscale(.55) brightness(.75)}
+#hz-regions button.on{outline:3px solid #facc15;outline-offset:2px}
+/* Mapas de regiones nítidos (antes se veían con ruido) */
+.region-card-art,.region-card-art *,.gen-btn i{image-rendering:auto!important}
+#hb{z-index:10001!important}
+
+/* Elementos quitados del menú */
+#discord-cta,.gba-version-line,#btn-cloud-sync,button[onclick*="openRulesModal"],button[onclick*="openPatchNotesModal"]{display:none!important}
+/* Regiones siempre visibles, con candado */
+.gen-btn{display:flex!important;visibility:visible!important;opacity:1!important;min-height:92px;background-color:#1e293b;position:relative}
+.hz-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;background:#000a;color:#fde68a;font:700 12px system-ui;border-radius:inherit;pointer-events:none}
